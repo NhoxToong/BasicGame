@@ -54,6 +54,7 @@ namespace game
         protected override void UnloadContent()
         {
             // TODO: Unload any non ContentManager content here
+            demon = null;
         }
 
         /// <summary>
@@ -67,10 +68,12 @@ namespace game
                 Exit();
 
             // TODO: Add your update logic here
+            position += new Vector2(1, 1);
 
             base.Update(gameTime);
         }
 
+        Vector2 position = Vector2.Zero;
         /// <summary>
         /// This is called when the game should draw itself.
         /// </summary>
@@ -80,8 +83,8 @@ namespace game
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-            spriteBatch.Begin();
-            spriteBatch.Draw(demon, new Vector2(0,0), Color.White);
+            spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend);
+            spriteBatch.Draw(demon, position, Color.White);
             spriteBatch.End();
 
             base.Draw(gameTime);

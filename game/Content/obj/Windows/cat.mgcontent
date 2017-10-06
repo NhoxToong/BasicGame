@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>c:/users/nhoxtoong/documents/visual studio 2015/Projects/game/game/Content/cat.png</SourceFile>
-  <SourceTime>2017-05-29T20:37:52.9095057+07:00</SourceTime>
-  <DestFile>c:/users/nhoxtoong/documents/visual studio 2015/Projects/game/game/Content/bin/Windows/cat.xnb</DestFile>
-  <DestTime>2017-09-17T17:34:58.248824+07:00</DestTime>
+  <SourceFile>C:/Users/NhoxToong/documents/visual studio 2015/Projects/game/game/Content/cat.png</SourceFile>
+  <SourceTime>2017-10-06T17:48:51.2611887+07:00</SourceTime>
+  <DestFile>C:/Users/NhoxToong/documents/visual studio 2015/Projects/game/game/Content/bin/Windows/cat.xnb</DestFile>
+  <DestTime>2017-10-06T17:50:08.7561828+07:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T22:05:36+07:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

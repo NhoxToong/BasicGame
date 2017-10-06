@@ -4,6 +4,6 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>c:/users/nhoxtoong/documents/visual studio 2015/Projects/game/game/Content/cat.png</File>
+    <File>C:/Users/NhoxToong/documents/visual studio 2015/Projects/game/game/Content/cat.png</File>
   </SourceFiles>
 </SourceFileCollection>

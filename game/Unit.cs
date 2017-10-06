@@ -20,14 +20,14 @@ namespace game
 
         private int totalFrame;
 
-        public MoveUnit(Texture2D texture, int rows, int columns)
+        /*public MoveUnit(Texture2D texture, int rows, int columns)
         {
             Texture = texture;
             Rows = rows;
             Column = columns;
             currentFrame = 0;
             totalFrame = Rows * Column;
-        }
+        }*/
 
         public void Update(GameTime gameTime)
         {
