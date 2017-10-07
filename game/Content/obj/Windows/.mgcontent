@@ -5,5 +5,15 @@
   <Config />
   <SourceFiles>
     <File>C:/Users/NhoxToong/documents/visual studio 2015/Projects/game/game/Content/cat.png</File>
+    <File>C:/Users/NhoxToong/documents/visual studio 2015/Projects/game/game/Content/Zombie/Walk01.png</File>
+    <File>C:/Users/NhoxToong/documents/visual studio 2015/Projects/game/game/Content/Zombie/Walk02.png</File>
+    <File>C:/Users/NhoxToong/documents/visual studio 2015/Projects/game/game/Content/Zombie/Walk03.png</File>
+    <File>C:/Users/NhoxToong/documents/visual studio 2015/Projects/game/game/Content/Zombie/Walk04.png</File>
+    <File>C:/Users/NhoxToong/documents/visual studio 2015/Projects/game/game/Content/Zombie/Walk05.png</File>
+    <File>C:/Users/NhoxToong/documents/visual studio 2015/Projects/game/game/Content/Zombie/Walk06.png</File>
+    <File>C:/Users/NhoxToong/documents/visual studio 2015/Projects/game/game/Content/Zombie/Walk07.png</File>
+    <File>C:/Users/NhoxToong/documents/visual studio 2015/Projects/game/game/Content/Zombie/Walk08.png</File>
+    <File>C:/Users/NhoxToong/documents/visual studio 2015/Projects/game/game/Content/Zombie/Walk09.png</File>
+    <File>C:/Users/NhoxToong/documents/visual studio 2015/Projects/game/game/Content/Zombie/Walk10.png</File>
   </SourceFiles>
 </SourceFileCollection>

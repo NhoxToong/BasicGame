@@ -1,6 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace game
 {
@@ -11,9 +13,7 @@ namespace game
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        private Texture2D background;
-        private Texture2D demon;
-        private Texture2D earth;
+        IList<Unit> __sprites;
 
         public Game1()
         {
@@ -31,6 +31,7 @@ namespace game
         {
             // TODO: Add your initialization logic here
 
+            __sprites = new List<Unit>();
             base.Initialize();
         }
 
@@ -42,9 +43,11 @@ namespace game
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            demon = Content.Load<Texture2D>("cat");
 
             // TODO: use this.Content to load your game content here
+            var textures = LoadZombie();
+            var sprite = new Unit(textures, 0, 0);
+            __sprites.Add(sprite);
         }
 
         /// <summary>
@@ -54,7 +57,6 @@ namespace game
         protected override void UnloadContent()
         {
             // TODO: Unload any non ContentManager content here
-            demon = null;
         }
 
         /// <summary>
@@ -68,7 +70,10 @@ namespace game
                 Exit();
 
             // TODO: Add your update logic here
-            position += new Vector2(1, 1);
+            for (int i = 0; i < __sprites.Count; i++)
+            {
+                __sprites[i].Update(gameTime);
+            }
 
             base.Update(gameTime);
         }
@@ -84,10 +89,24 @@ namespace game
 
             // TODO: Add your drawing code here
             spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend);
-            spriteBatch.Draw(demon, position, Color.White);
+            for(int i=0;i<__sprites.Count; i++)
+            {
+                __sprites[i].Draw(gameTime,spriteBatch);
+            }
+
             spriteBatch.End();
 
             base.Draw(gameTime);
+        }
+
+        private IList<Texture2D> LoadZombie()
+        {
+            List<Texture2D> txs = new List<Texture2D>();
+            for (int i = 1; i <= 10; i++)
+            {
+                txs.Add(this.Content.Load<Texture2D>($"Zombie\\Walk{i.ToString("00")}"));
+            }
+            return txs;
         }
     }
 }

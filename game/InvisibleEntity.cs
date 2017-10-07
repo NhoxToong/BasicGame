@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace game
 {
-    class InvisibleEntity : GameEntity
+    public class InvisibleEntity : GameEntity
     {
 
     }

@@ -24,3 +24,13 @@ c:\users\nhoxtoong\documents\visual studio 2015\Projects\game\game\obj\x86\Debug
 c:\users\nhoxtoong\documents\visual studio 2015\Projects\game\game\obj\x86\Debug\game.exe
 c:\users\nhoxtoong\documents\visual studio 2015\Projects\game\game\obj\x86\Debug\game.pdb
 c:\users\nhoxtoong\documents\visual studio 2015\Projects\game\game\bin\Windows\x86\Debug\Content\cat.xnb
+C:\Users\NhoxToong\documents\visual studio 2015\Projects\game\game\bin\Windows\x86\Debug\Content\Zombie\Walk01.xnb
+C:\Users\NhoxToong\documents\visual studio 2015\Projects\game\game\bin\Windows\x86\Debug\Content\Zombie\Walk02.xnb
+C:\Users\NhoxToong\documents\visual studio 2015\Projects\game\game\bin\Windows\x86\Debug\Content\Zombie\Walk03.xnb
+C:\Users\NhoxToong\documents\visual studio 2015\Projects\game\game\bin\Windows\x86\Debug\Content\Zombie\Walk04.xnb
+C:\Users\NhoxToong\documents\visual studio 2015\Projects\game\game\bin\Windows\x86\Debug\Content\Zombie\Walk05.xnb
+C:\Users\NhoxToong\documents\visual studio 2015\Projects\game\game\bin\Windows\x86\Debug\Content\Zombie\Walk06.xnb
+C:\Users\NhoxToong\documents\visual studio 2015\Projects\game\game\bin\Windows\x86\Debug\Content\Zombie\Walk07.xnb
+C:\Users\NhoxToong\documents\visual studio 2015\Projects\game\game\bin\Windows\x86\Debug\Content\Zombie\Walk08.xnb
+C:\Users\NhoxToong\documents\visual studio 2015\Projects\game\game\bin\Windows\x86\Debug\Content\Zombie\Walk09.xnb
+C:\Users\NhoxToong\documents\visual studio 2015\Projects\game\game\bin\Windows\x86\Debug\Content\Zombie\Walk10.xnb
