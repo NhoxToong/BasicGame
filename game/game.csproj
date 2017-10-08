@@ -41,6 +41,8 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Config.cs" />
+    <Compile Include="ConstantValue.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="GameEntity.cs" />
     <Compile Include="InvisibleEntity.cs" />

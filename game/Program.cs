@@ -12,10 +12,17 @@ namespace game
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
             using (var game = new Game1())
-                game.Run();
+            {
+                using (Config cfg = Config.Instance)
+                {
+                    cfg.Load();
+                    game.Run();
+                    cfg.Save();
+                }
+            }
         }
     }
 #endif

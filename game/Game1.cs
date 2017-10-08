@@ -102,9 +102,9 @@ namespace game
         private IList<Texture2D> LoadZombie()
         {
             List<Texture2D> txs = new List<Texture2D>();
-            for (int i = 1; i <= 10; i++)
+            for (int i = 0; i < Config.Instance.LoadUnitTexture("Zombie").Length; i++)
             {
-                txs.Add(this.Content.Load<Texture2D>($"Zombie\\Walk{i.ToString("00")}"));
+                txs.Add(this.Content.Load<Texture2D>(Config.Instance.LoadUnitTexture("Zombie")[i]));
             }
             return txs;
         }
