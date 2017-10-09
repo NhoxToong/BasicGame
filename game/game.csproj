@@ -42,6 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AbstractModel.cs" />
+    <Compile Include="Background.cs" />
     <Compile Include="Character.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="ConstantValue.cs" />

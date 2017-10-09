@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 namespace game
 {
@@ -48,8 +49,19 @@ namespace game
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+            __sprites.Add(CreateBg());
             var textures = LoadZombie();
             (__sprites as List<VisibleEntity>).AddRange(textures);
+        }
+
+        private Background CreateBg()
+        {
+            List<Texture2D> txs = new List<Texture2D>();
+            for (int i = 0; i < Config.Instance.LoadUnitTexture("Background").Length; i++)
+            {
+                txs.Add(this.Content.Load<Texture2D>(Config.Instance.LoadUnitTexture("Background")[i]));
+            }
+            return new Background(new Unit(txs, 0, 0));
         }
 
         /// <summary>
@@ -105,9 +117,9 @@ namespace game
         {
             List<Zombie> l = new List<Zombie>();
             List<Texture2D> txs = new List<Texture2D>();
-            for (int i = 0; i < Config.Instance.LoadUnitTexture("Zombie").Length; i++)
+            for (int i = 0; i < Config.Instance.LoadUnitTexture("ZombieWalk").Length; i++)
             {
-                txs.Add(this.Content.Load<Texture2D>(Config.Instance.LoadUnitTexture("Zombie")[i]));
+                txs.Add(this.Content.Load<Texture2D>(Config.Instance.LoadUnitTexture("ZombieWalk")[i]));
             }
 
             float x = 5;

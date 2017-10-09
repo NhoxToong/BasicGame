@@ -34,3 +34,4 @@ C:\Users\NhoxToong\documents\visual studio 2015\Projects\game\game\bin\Windows\x
 C:\Users\NhoxToong\documents\visual studio 2015\Projects\game\game\bin\Windows\x86\Debug\Content\Zombie\Walk08.xnb
 C:\Users\NhoxToong\documents\visual studio 2015\Projects\game\game\bin\Windows\x86\Debug\Content\Zombie\Walk09.xnb
 C:\Users\NhoxToong\documents\visual studio 2015\Projects\game\game\bin\Windows\x86\Debug\Content\Zombie\Walk10.xnb
+C:\Users\NhoxToong\documents\visual studio 2015\Projects\game\game\bin\Windows\x86\Debug\Content\Background\graveyard.xnb
