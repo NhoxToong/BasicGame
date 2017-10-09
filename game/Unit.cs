@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace game
 {
-    public class Unit : VisibleEntity
+    public class Unit : AbstractModel
     {
         private float _left;
         private float _top;
@@ -26,14 +26,15 @@ namespace game
             this.Texture = texture;
         }
 
-        public virtual void Update(GameTime gameTime)
+        public override void Update(GameTime gameTime)
         {
             idx = (idx + 1)%nCount;
         }
 
-        public virtual void Draw(GameTime gameTime, SpriteBatch handler)
+        public override void Draw(GameTime gameTime, object handler)
         {
-            handler.Draw(_texture[idx], new Vector2(_left, _top), Color.White);
+            SpriteBatch spriteBatch = handler as SpriteBatch;
+            spriteBatch.Draw(_texture[idx], new Vector2(_left, _top), Color.White);
         }
 
         #region properties

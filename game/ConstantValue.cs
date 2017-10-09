@@ -16,7 +16,9 @@ namespace game
 
         static ConstantValue()
         {
-            APP_PATH = Path.GetDirectoryName(new UriBuilder(Assembly.GetExecutingAssembly().CodeBase).Path);
+            var codebase = Assembly.GetExecutingAssembly().CodeBase;
+            string uripath = new Uri(codebase).LocalPath;
+            APP_PATH = Path.GetDirectoryName(uripath);
         }
     }
 }

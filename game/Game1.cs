@@ -13,11 +13,14 @@ namespace game
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        IList<Unit> __sprites;
+        IList<VisibleEntity> __sprites;
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
+            graphics.IsFullScreen = false;
+            graphics.PreferredBackBufferHeight = 720;
+            graphics.PreferredBackBufferWidth = 1024;
             Content.RootDirectory = "Content";
         }
 
@@ -31,7 +34,7 @@ namespace game
         {
             // TODO: Add your initialization logic here
 
-            __sprites = new List<Unit>();
+            __sprites = new List<VisibleEntity>();
             base.Initialize();
         }
 
@@ -46,8 +49,7 @@ namespace game
 
             // TODO: use this.Content to load your game content here
             var textures = LoadZombie();
-            var sprite = new Unit(textures, 0, 0);
-            __sprites.Add(sprite);
+            (__sprites as List<VisibleEntity>).AddRange(textures);
         }
 
         /// <summary>
@@ -99,14 +101,19 @@ namespace game
             base.Draw(gameTime);
         }
 
-        private IList<Texture2D> LoadZombie()
+        private Zombie[] LoadZombie()
         {
+            List<Zombie> l = new List<Zombie>();
             List<Texture2D> txs = new List<Texture2D>();
             for (int i = 0; i < Config.Instance.LoadUnitTexture("Zombie").Length; i++)
             {
                 txs.Add(this.Content.Load<Texture2D>(Config.Instance.LoadUnitTexture("Zombie")[i]));
             }
-            return txs;
+
+            float x = 5;
+            float y = 10;
+            l.Add(new Zombie(new Unit(txs, x, y)));
+            return l.ToArray();
         }
     }
 }

@@ -7,11 +7,9 @@ using System.Threading.Tasks;
 
 namespace game
 {
-    public abstract class GameEntity : Game1
+    public abstract class AbstractModel
     {
-        public virtual void Update(GameTime gameTime)
-        {
-
-        }
+        public abstract void Update(GameTime gameTime);
+        public abstract void Draw(GameTime gameTime, object handler);
     }
 }

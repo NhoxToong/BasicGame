@@ -41,7 +41,7 @@ namespace game
 
         public string[] LoadUnitTexture(string unitname)
         {
-            return (jsonConfig["units"][unitname] as JArray).Select(v => v.ToString()).ToArray();
+            return (jsonConfig["units"][0][unitname] as JArray).Select(v => v.ToString()).ToArray();
         }
 
         public void Dispose()
