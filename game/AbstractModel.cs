@@ -9,7 +9,7 @@ namespace game
 {
     public abstract class AbstractModel
     {
-        public abstract void Update(GameTime gameTime);
+        public abstract void Update(GameTime gameTime, float X, float Y);
         public abstract void Draw(GameTime gameTime, object handler);
     }
 }

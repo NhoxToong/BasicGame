@@ -9,22 +9,24 @@ namespace game
 {
     public class VisibleEntity : GameEntity
     {
-        AbstractModel _model;
+        Unit _model;
 
-        public VisibleEntity(AbstractModel model)
+        public VisibleEntity(Unit model)
         {
             this._model = model;
         }
 
-        public override void Update(GameTime gameTime)
+        public void Update(GameTime gameTime, float X, float Y)
         {
             base.Update(gameTime);
-            _model.Update(gameTime);
+            _model.Update(gameTime,X,Y);
         }
 
         public virtual void Draw(GameTime gameTime, object handler)
         {
             _model.Draw(gameTime, handler);
         }
+
+
     }
 }

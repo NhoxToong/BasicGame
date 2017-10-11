@@ -17,6 +17,15 @@ namespace game
         private int nCount;
         private IList<Texture2D> _texture;
 
+        public int XTilePos { get; set; }
+        public int YTilePos { get; set; }
+
+        private int wantedX;
+        private int wantedY;
+
+        public bool TransitionOn { get; set; }
+
+        int state = 0;
         int idx;
         public Unit(IList<Texture2D> texture, float left, float top)
         {
@@ -26,19 +35,84 @@ namespace game
             this.Texture = texture;
         }
 
-        public override void Update(GameTime gameTime)
+        public override void Update(GameTime gameTime, float X, float Y)
         {
             idx = (idx + 1)%nCount;
+            _left = X;
+            _top = Y;
         }
+
+        /*public void Update()
+        {
+            if (!TransitionOn)
+                return;
+
+            //UpdateTransition();
+        }*/
+
+       /* private void UpdateTransition()
+        {
+            if (wantedX < XTilePos)
+            {
+                pos.X -= 1;
+                if ((pos.X - wantedX * width) == 0)
+                {
+                    XTilePos--;
+                }
+            }
+            else if (wantedX > XTilePos)
+            {
+                pos.X -= 1;
+                if ((pos.X - wantedX * width) == 0)
+                {
+                    XTilePos++;
+                }
+            }
+            else if (wantedY < YTilePos)
+            {
+                pos.Y -= 1;
+                if ((pos.Y - wantedY * height) == 0)
+                {
+                    YTilePos--;
+                }
+            }
+            else if (wantedY > YTilePos)
+            {
+                pos.Y += 1;
+                if ((pos.Y - wantedY * height) == 0)
+                {
+                    YTilePos++;
+                }
+            }
+            else TransitionOn = false;
+        }*/
+
 
         public override void Draw(GameTime gameTime, object handler)
         {
             SpriteBatch spriteBatch = handler as SpriteBatch;
-            spriteBatch.Draw(_texture[idx], new Vector2(_left, _top), Color.White);
+            if(state == 1)
+                spriteBatch.Draw(_texture[idx], new Vector2(_left,_top), Color.Yellow);
+            else
+                spriteBatch.Draw(_texture[idx], new Vector2(_left, _top), Color.White);
+
         }
+        
+
 
         #region properties
-        public float Left
+        public float width
+        {
+            get
+            {
+                return _width;
+            }
+            set
+            {
+                _width = value;
+            }
+        }
+        public float left
         {
             get
             {
@@ -58,17 +132,6 @@ namespace game
             set
             {
                 _top = value;
-            }
-        }
-        public float width
-        {
-            get
-            {
-                return _width;
-            }
-            set
-            {
-                _width = value;
             }
         }
         public float height

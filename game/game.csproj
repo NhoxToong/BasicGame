@@ -46,10 +46,15 @@
     <Compile Include="Character.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="ConstantValue.cs" />
+    <Compile Include="EventArg\NewInputEventArgs.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="GameEntity.cs" />
+    <Compile Include="Input\Enum.cs" />
+    <Compile Include="Input\input.cs" />
+    <Compile Include="Input\InputKeyboard.cs" />
     <Compile Include="InvisibleEntity.cs" />
     <Compile Include="Maps.cs" />
+    <Compile Include="movement\Movement.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Unit.cs" />

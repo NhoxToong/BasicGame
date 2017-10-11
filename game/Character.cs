@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace game
 {
-    public abstract class Character : VisibleEntity
+    public abstract class Character 
     {
         int hp;
         int mp;
@@ -17,7 +17,7 @@ namespace game
 
         Unit sprite2d;
 
-        public Character(Unit sprite2d, int hp=100, int mp=100, int stm =5) :base(sprite2d)
+        public Character(Unit sprite2d, int hp=100, int mp=100, int stm =5) 
         {
             this.damage = 200;
             this.hp = hp;
@@ -26,14 +26,14 @@ namespace game
             this.sprite2d = sprite2d;
         }
 
-        public override void Draw(GameTime gameTime, object handler)
+        public void Draw(GameTime gameTime, object handler)
         {
             sprite2d.Draw(gameTime, handler);
         }
 
-        public override void Update(GameTime gameTime)
+        public void Update(GameTime gameTime,float X, float Y)
         {
-            sprite2d.Update(gameTime);
+            sprite2d.Update(gameTime,X,Y);
         }
     }
 }

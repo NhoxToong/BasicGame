@@ -4,6 +4,8 @@ using Microsoft.Xna.Framework.Input;
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using game.Input;
+using game.EventArg;
 
 namespace game
 {
@@ -15,14 +17,41 @@ namespace game
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         IList<VisibleEntity> __sprites;
+        Matrix matrix = Matrix.Identity;
+        InputKeyboard inputKeyboard;
+        Vector2 spritePosition;
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             graphics.IsFullScreen = false;
-            graphics.PreferredBackBufferHeight = 720;
-            graphics.PreferredBackBufferWidth = 1024;
+            graphics.PreferredBackBufferHeight = 1024;
+            graphics.PreferredBackBufferWidth = 1920;
+            inputKeyboard = new InputKeyboard();
+            inputKeyboard.NewInput += InputKeyboard_NewInput;
             Content.RootDirectory = "Content";
+            spritePosition = new Vector2(5, 5);
+        }
+
+        private void InputKeyboard_NewInput(object sender, NewInputEventArgs e)
+        {
+            switch (e.GameInput)
+            {
+                case GameInput.Right:
+                    spritePosition.X++;
+                    break;
+                case GameInput.Left:
+                    spritePosition.X--;
+                    break;
+                case GameInput.Up:
+                    spritePosition.Y++;
+                    break;
+                case GameInput.Down:
+                    spritePosition.Y--;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
         }
 
         /// <summary>
@@ -36,6 +65,7 @@ namespace game
             // TODO: Add your initialization logic here
 
             __sprites = new List<VisibleEntity>();
+            this.IsMouseVisible = true;
             base.Initialize();
         }
 
@@ -49,7 +79,7 @@ namespace game
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
-            __sprites.Add(CreateBg());
+            //__sprites.Add(CreateBg());
             var textures = LoadZombie();
             (__sprites as List<VisibleEntity>).AddRange(textures);
         }
@@ -84,11 +114,12 @@ namespace game
                 Exit();
 
             // TODO: Add your update logic here
+            inputKeyboard.Update(gameTime.ElapsedGameTime.Milliseconds);
             for (int i = 0; i < __sprites.Count; i++)
             {
-                __sprites[i].Update(gameTime);
+                __sprites[i].Update(gameTime,spritePosition.X,spritePosition.Y);
             }
-
+            matrix = Matrix.CreateScale(new Vector3(0.5f,0.5f,1f));
             base.Update(gameTime);
         }
 
@@ -99,10 +130,10 @@ namespace game
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Black);
 
             // TODO: Add your drawing code here
-            spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend);
+            spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, null, null, null, null, matrix);
             for(int i=0;i<__sprites.Count; i++)
             {
                 __sprites[i].Draw(gameTime,spriteBatch);
@@ -121,11 +152,9 @@ namespace game
             {
                 txs.Add(this.Content.Load<Texture2D>(Config.Instance.LoadUnitTexture("ZombieWalk")[i]));
             }
-
-            float x = 5;
-            float y = 10;
-            l.Add(new Zombie(new Unit(txs, x, y)));
+            l.Add(new Zombie(new Unit(txs, 5, 5)));
             return l.ToArray();
         }
+        
     }
 }
